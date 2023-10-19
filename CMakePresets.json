@@ -1,0 +1,36 @@
+{
+    "version": 4,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 23,
+        "patch": 0
+    },
+    "include": [],
+    "configurePresets": [
+        {
+          "name": "default",
+          "displayName": "Ninja",
+          "generator": "Ninja",
+          "description": "Configure release version using Ninja",
+          "binaryDir": "${sourceDir}/build",
+          "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release"
+          },
+          "environment": {
+          }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "displayName": "Ninja Release",
+            "configurePreset": "default"
+        },
+        {
+            "name": "package",
+            "displayName": "Package Ninja Release",
+            "configurePreset": "default",
+            "targets":  ["package"]
+        }
+    ]
+}
